@@ -1,15 +1,5 @@
-const villain = {
-    name: 'Thanos',  
-    aliases: ['Mad Titan'],
-    origin: 'Titan'
-}
+const path = require('path');
 
-Object.defineProperty(villain, 'origin', {
-    writable: false,
-    enumerable: true,
-    configurable: false,
-})
+const relativePath = path.join(__dirname, 'views', 'index.html');
 
-villain.origin = 'Xandar';
 
-console.log(villain) // {name: 'Thanos', aliases: ['Mad Titan'], origin: 'Titan'}

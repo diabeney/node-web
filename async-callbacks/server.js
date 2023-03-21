@@ -6,27 +6,21 @@ const errFn = (err, response) => {
     response.end('Server error')
 }
 
-const server = http.createServer((req, res) => {
+
+const serverbt = http.createServer((req, res) => {
     if(req.url === '/') {
         fs.readFile('./titles.json', (err, data) => {
-            if(err) {
-               errFn(err, res)
-            }else {
-                const titles = JSON.parse(data.toString());
-                fs.readFile('./template.html', (err, data) => {
-                    if(err) {
-                        errFn(err, res)
-                    } else {
-                        const tmpl = data.toString();
-                        const html = tmpl.replace('%', titles.join('</li><li>'));
-                        res.writeHead(200,{'content-type': 'text/html'});
-                        res.end(html);
-                    }
-                })
-            }
-        })
-    }
-})
+            if(err) return errFn(err, res);
+            const titles = JSON.parse(data.toString());
+            fs.readFile('./template.html', (err, data) => {
+                if(err) return errFn(err, res);
+                const tmpl = data.toString();
+                const html = tmpl.replace('%', titles.join('</li><li>'));
+                res.writeHead(200, {'content-type': 'text/html'});
+                res.end(html)
+            })
+        }
+)}});
 
 console.log('server running on localhost:8000')
-server.listen(8000, 'localhost');
+serverbt.listen(8000, 'localhost');

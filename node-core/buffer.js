@@ -7,6 +7,7 @@ const buf2 = new Uint8Array(0);
 const json = JSON.stringify(buf);
 console.log(json)
 
+
 let compare = Buffer.compare(buf, buf2);
 // console.log(compare)
 // console.log(buf)

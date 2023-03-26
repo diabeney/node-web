@@ -1,4 +1,3 @@
-
 os = require('os');
 const totalMemory = os.totalmem()
 

@@ -8,7 +8,7 @@ const root = __dirname;
 const server = http.createServer((req, res) => {
     const url = parse(req.url);
     const path = join(root, url.pathname);
-    fs.stat(path, (err, stat) => {
+    fs.stat(path, (err, stat) => { //fs.stat is basically used to check the existence of a file
         if(err) {
             if(err.code === 'ENOENT') {
                 res.statusCode = 404;

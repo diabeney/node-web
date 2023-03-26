@@ -20,10 +20,10 @@ fs.readdir('./', (err, files) => {
     }
 })
 // File streams
-fs.open('./os.js','r+', (err, fd) => {
+fs.open('./os.js','a', (err, fd) => {
     if(err) return console.error(err);
-    const writable = fs.createWriteStream(null, {fd: fd,defaultEncoding: 'utf8'});
-    writable.write('insert')
+    const writable = fs.createWriteStream(null, {fd: fd,start: 0,defaultEncoding: 'utf8'});
+    writable.write(`import react from 'react'`)
 })
 
 

@@ -14,4 +14,8 @@ promise.then((value) => {
     const obj = {name: fullname, username: value, verified: false};
     console.log(obj)
 })
+.then(userdata => {
+    if(userdata.verified) return 'user:public_profile';
+    return 'user'
+})
 .catch((err) => console.log(err));

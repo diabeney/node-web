@@ -19,3 +19,6 @@ switch(command) {
     default:
         console.log('Usage: ' + process.argv[0] + ' list|add [taskdescription]');
 }
+
+
+console.log('')

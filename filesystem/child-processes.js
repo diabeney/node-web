@@ -17,5 +17,5 @@ function logError(err) {
 exec('ls -lh', (error, stdout, stderr) => {
     if(error) logError(error);
     if(stderr) logError(stderr);
-    console.log('stdout: ', stdout);
+    console.log('stdou ', stdout);
 })

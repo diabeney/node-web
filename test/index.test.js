@@ -10,9 +10,9 @@ function execute(err) {
     return printError(err)
 }
 
-test('should print Error', () => { 
+test('should print the correct type of error', () => { 
     expect(execute(new Error('An error'))).toBe('Error: An error')
 })
-test('should print Error', () => { 
+test('should print the correct type of error', () => { 
     expect(execute('Error')).toBe('Error: Error')
 })

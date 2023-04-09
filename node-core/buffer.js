@@ -1,13 +1,6 @@
-'use strict';
+const fs = require('fs');
 
-const message = 'I know what it feels like to los';
-const buf = Buffer.from(message);
-const buf2 = new Uint8Array(0);
-
-const json = JSON.stringify(buf);
-console.log(json)
-
-
-let compare = Buffer.compare(buf, buf2);
-// console.log(compare)
-// console.log(buf)
+fs.readFile('./names.txt' , (err, data) => {
+    if(err) return console.log(err);
+    console.log(data.toString('utf-8'))
+})

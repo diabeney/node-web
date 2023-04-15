@@ -6,6 +6,7 @@ process.stdin.setEncoding('utf-8');
 //     process.stdout.write(text.toUpperCase());
 // })
 
-console.time('mean op');
-console.log(math.arithmeticmean(2,1,3,4));
-console.timeEnd('mean op')
+// console.time('mean op');
+// console.log(math.arithmeticmean(2,1,3,4));
+// console.timeEnd('mean op')
+

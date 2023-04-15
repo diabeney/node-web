@@ -1,5 +1,4 @@
-var util = require('util');
-var Readable = require('stream').Readable;
+const Readable = require('stream').Readable;
 
 class MyReadStream extends Readable {
     constructor(options) {

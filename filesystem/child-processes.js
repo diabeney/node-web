@@ -1,8 +1,9 @@
 const { exec } = require('child_process');
+const target = process.argv.slice(2).join(' ');
 let dir = __dirname;
-let cmdComand = `code ${dir}`;
+let cmdComand = `start ${target}`;
 
-// exec(cmdComand);
+exec(cmdComand);
 
 function logError(err) {
     if(err instanceof Error) {

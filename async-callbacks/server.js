@@ -1,5 +1,8 @@
 const http = require('http');
 const fs = require('fs');
+const {join} = require('path')
+
+const filepath = join(__dirname, 'titles.json')
 
 const errFn = (err, response) => {
     console.log(err);
@@ -9,10 +12,10 @@ const errFn = (err, response) => {
 
 const serverbt = http.createServer((req, res) => {
     if(req.url === '/') {
-        fs.readFile('./titles.json', (err, data) => {
+        fs.readFile(filepath, (err, data) => {
             if(err) return errFn(err, res);
             const titles = JSON.parse(data.toString());
-            fs.readFile('./template.html', (err, data) => {
+            fs.readFile(join(__dirname, 'template.html'), (err, data) => {
                 if(err) return errFn(err, res);
                 const tmpl = data.toString();
                 const html = tmpl.replace('%', titles.join('</li><li>'));

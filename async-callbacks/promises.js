@@ -12,10 +12,12 @@ const promise = new Promise((resolve, reject) => {
 promise.then((value) => {
     const fullname = 'Susana Taibobo';
     const obj = {name: fullname, username: value, verified: false};
-    console.log(obj)
+    console.log(obj);
+    return obj;
 })
 .then(userdata => {
     if(userdata.verified) return 'user:public_profile';
     return 'user'
 })
 .catch((err) => console.log(err));
+

@@ -1,4 +1,4 @@
-const { exec } = require('child_process');
+const { exec, execFile } = require('child_process');
 const target = process.argv.slice(2).join(' ');
 let dir = __dirname;
 let cmdComand = `start ${target}`;
@@ -20,3 +20,9 @@ exec('ls -lh', (error, stdout, stderr) => {
     if(stderr) logError(stderr);
     console.log('stdou ', stdout);
 })
+
+execFile('hello.bat',['diabene'] ,(err, stdout) => {
+    console.log(stdout);
+})
+
+

@@ -3,7 +3,7 @@ const target = process.argv.slice(2).join(' ');
 let dir = __dirname;
 let cmdComand = `start ${target}`;
 
-exec(cmdComand);
+// exec(cmdComand);
 
 function logError(err) {
     if(err instanceof Error) {

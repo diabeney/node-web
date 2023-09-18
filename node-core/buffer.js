@@ -1,7 +1,6 @@
-const fs = require('fs');
-
-fs.readFile('./names.txt' , (err, data) => {
-    if(err) return console.log(err);
-    console.log(data.toString('utf-8'))
-})
-
+(function calculateSeparationFactor() {
+  const initialConc = 1000;
+  const KL = 0.0191;
+  const result = 1 / (1 + KL * initialConc);
+  console.log(result);
+})();
